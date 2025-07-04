@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Seleção de Módulos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Selecione os Módulos</h1>
+
+  <div class="container-principal">
+    <div class="modulos">
+      <table>
+        <thead>
+          <tr>
+            <th>Selecionar</th>
+            <th>Módulo</th>
+            <th>Adesão</th>
+            <th>Mensalidade</th>
+          </tr>
+        </thead>
+        <tbody id="modulos-body"></tbody>
+      </table>
+    </div>
+
+    <div class="sidebar hidden" id="sidebar">
+      <h2>Módulos Selecionados</h2>
+      <ul id="selecionados"></ul>
+      <p><strong>Total da Adesão:</strong> R$ <span id="total-adesao">0</span></p>
+      <p><strong>Total da Mensalidade:</strong> R$ <span id="total-mensalidade">0</span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

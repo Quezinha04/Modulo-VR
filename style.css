@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    color: #111;
+    min-height: 100vh;
+    padding: 30px;
+    /* Aqui só centraliza título em cima e container abaixo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  /* TITULO GRANDE E IMPACTANTE */
+  h1 {
+    font-weight: 900;
+    font-size: 3rem;
+    color: #001f3f;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    user-select: none;
+    text-align: center;
+  }
+  
+  /* Container flex que junta tabela e sidebar lado a lado */
+  .container-principal {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  /* A tabela ocupando mais espaço */
+  .modulos {
+    flex: 2;
+    min-width: 400px;
+  }
+  
+  /* Tabela */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  thead tr {
+    background-color: #001f3f;
+    color: #ffdd00;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    user-select: none;
+  }
+  
+  thead th {
+    padding: 14px 20px;
+    border: none;
+  }
+  
+  tbody tr {
+    background: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+  
+  tbody tr:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  
+  tbody td {
+    padding: 14px 20px;
+    font-weight: 600;
+    color: #222;
+    font-size: 1rem;
+  }
+  
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #001f3f;
+    transition: transform 0.2s ease;
+  }
+  
+  input[type="checkbox"]:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Sidebar lateral */
+  .sidebar {
+    flex: 1;
+    min-width: 320px;
+    background: #001f3f;
+    border-left: 6px solid #ffdd00;
+    padding: 30px 25px;
+    border-radius: 16px;
+    color: #ffdd00;
+    font-weight: 900;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 30px rgba(0, 31, 63, 0.9);
+    user-select: none;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: sticky;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Esconde lateral quando não selecionado */
+  .hidden {
+    display: none !important;
+  }
+  
+  .sidebar h2 {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffdd00;
+    margin-bottom: 20px;
+  }
+  
+  #selecionados {
+    list-style: disc;
+    padding-left: 20px;
+    max-height: 180px;
+    overflow-y: auto;
+    margin-bottom: 25px;
+    color: #fff176;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  
+  #selecionados::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  #selecionados::-webkit-scrollbar-track {
+    background: rgba(255, 221, 0, 0.2);
+    border-radius: 12px;
+  }
+  
+  #selecionados::-webkit-scrollbar-thumb {
+    background-color: #ffdd00;
+    border-radius: 12px;
+  }
+  
+  .sidebar p {
+    font-size: 1.1rem;
+    color: #ffdd00;
+    font-weight: 900;
+  }
+  
+  .sidebar span {
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: white;
+  }
+  
+  /* MOBILE */
+  @media (max-width: 700px) {
+    body {
+      padding: 20px;
+    }
+  
+    .container-principal {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .modulos,
+    .sidebar {
+      width: 100%;
+      min-width: auto;
+      max-height: none;
+      position: relative;
+      top: auto;
+      border-left: none;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      margin-bottom: 25px;
+    }
+  }
+  /* Botão lixeira no desktop */
+.resumo li button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ffdd00;
+    font-size: 1.1rem;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .resumo li button:hover {
+    color: #fff176;
+  }
+  
+  /* Mobile friendly: botão maior e mais espaçado */
+  @media (max-width: 700px) {
+    .resumo li {
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .resumo li button {
+      font-size: 1.5rem; /* maior pra facilitar toque */
+      margin-left: 0;
+      padding: 6px 10px;
+      flex-shrink: 0;
+    }
+    
+    /* Sidebar adapta no mobile */
+    .resumo {
+      max-height: none;
+      position: relative;
+      width: 100%;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      border-left: none;
+      border-radius: 12px;
+      padding: 20px;
+    }
+  }
+  
